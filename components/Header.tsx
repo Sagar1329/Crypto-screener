@@ -12,7 +12,7 @@ const Header = () => {
     <header>
     <div className="main-container inner">
         <Link href="/">
-        <Image src='logo.svg' width={132} height={40} alt="Crypto Screener logo" />
+        <Image src='/logo.svg' width={132} height={40} alt="Crypto Screener logo" />
         </Link>
 
         <nav>
