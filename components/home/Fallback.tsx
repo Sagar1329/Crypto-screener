@@ -93,13 +93,6 @@ export const TrendingCoinsFallback = () => {
     );
 };
 
-/*************  ✨ Windsurf Command ⭐  *************/
-/**
- * A fallback component for the categories page when data is not available.
- * It displays a skeleton DataTable with columns for category, top gainers, 24h change, market cap, and 24h volume.
- * The component is used to provide a smooth user experience when data is not available.
- */
-/*******  aec9a5df-eacd-4745-b509-fc8d07ef3fc1  *******/
 export const CategoriesFallback = () => {
     const columns = [
         {

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { cn, formatCurrency } from '@/lib/utils';
 import DataTable from '../DataTable';
+import { TrendingCoinsFallback } from './Fallback';
 const columns: DataTableColumn<TrendingCoin>[] = [
     {
         header: 'Name',
@@ -50,22 +51,23 @@ const columns: DataTableColumn<TrendingCoin>[] = [
 
     }
 ]
-const TrendingCoins = async() => {
+const TrendingCoins = async () => {
     let trendingCoins;
-    try{
-trendingCoins = await fetcher<{coins:TrendingCoin[]}>('/search/trending',undefined,300);
-    }catch(e){
-console.log('error')
+    try {
+        trendingCoins = await fetcher<{ coins: TrendingCoin[] }>('/search/trending', undefined, 300);
+    } catch (e) {
+        console.error("Error fetching trending coins", e)
+        return <TrendingCoinsFallback />;
     }
-  return (
-      <div id="trending-coins">    <h4>Trending coins</h4>
-          <DataTable data={trendingCoins?.coins.slice(0,6)|| []}
-              columns={columns}
-              rowKey={(coin) => coin.item.id}
-              tableClassName='trending-coins-table'
-              headerCellClassName='py-3!'
-              bodyCellClassName='py-2!' /></div>
-  )
+    return (
+        <div id="trending-coins">    <h4>Trending coins</h4>
+            <DataTable data={trendingCoins?.coins.slice(0, 6) || []}
+                columns={columns}
+                rowKey={(coin) => coin.item.id}
+                tableClassName='trending-coins-table'
+                headerCellClassName='py-3!'
+                bodyCellClassName='py-2!' /></div>
+    )
 }
 
 export default TrendingCoins
