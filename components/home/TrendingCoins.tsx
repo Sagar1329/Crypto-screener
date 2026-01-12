@@ -32,11 +32,12 @@ const columns: DataTableColumn<TrendingCoin>[] = [
             const isTrendingUp = item.data.price_change_percentage_24h.inr > 0;
             return (
                 <div className={cn('price-change', isTrendingUp ? 'text-green-500' : 'text-red-500')}>
-                    <p>
+                    <p className='flex items-center gap-1'>
+                        {Math.abs(item.data.price_change_percentage_24h.inr).toFixed(2)}%
+
                         {isTrendingUp ?
                             (<TrendingUp width={16} height={16} />) :
                             (<TrendingDown width={16} height={16} />)}
-                        {Math.abs(item.data.price_change_percentage_24h.inr).toFixed(2)}%
                     </p>
 
 
