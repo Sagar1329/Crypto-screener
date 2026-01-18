@@ -87,16 +87,19 @@ interface TrendingCoin {
 }
 
 interface SearchCoin {
-    id: string;
-    name: string;
-    symbol: string;
-    market_cap_rank: number | null;
-    thumb: string;
-    large: string;
-    data: {
-        price?: number;
-        price_change_percentage_24h: number;
-    };
+    coins:[{
+        id: string;
+        name: string;
+        symbol: string;
+        market_cap_rank: number | null;
+        thumb: string;
+        large: string;
+        data: {
+            price?: number;
+            price_change_percentage_24h: number;
+        }; 
+    }]
+   
 }
 
 // Chart Section Props (used in ChartSection.tsx)
@@ -319,3 +322,11 @@ interface PoolData {
     name: string;
     network: string;
 }
+
+
+
+type CoinMinimal = {
+    id: string;
+    name: string;
+    image: string;
+};

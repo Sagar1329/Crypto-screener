@@ -1,7 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
-
 import { Time } from 'lightweight-charts';
 
 
@@ -122,3 +121,21 @@ export const buildPageNumbers = (
 
   return pages;
 };
+
+
+
+
+export function extractMatchingCoins(
+  ids: string[],
+  coins: CoinMarketData[],
+): CoinMinimal[] {
+  const idSet = new Set(ids);
+
+  return coins
+    .filter((coin) => idSet.has(coin.id))
+    .map(({ id, name, image }) => ({
+      id,
+      name,
+      image,
+    }));
+}
