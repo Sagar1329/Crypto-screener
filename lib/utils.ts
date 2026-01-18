@@ -9,14 +9,28 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const formatCurrency = (amount: number): string => {
-  const formattedAmount = new Intl.NumberFormat('en-IN', {
-    style: 'currency',
-    currency: 'INR',
-  }).format(amount);
+export function formatCurrency(
+  value: number | null | undefined,
+  digits: number = 2,
+  currency: string = 'INR',
+  showSymbol: boolean = true,
+  locale: string = 'en-IN',
+): string {
+  if (value === null || value === undefined || isNaN(value)) {
+    const zero = (0).toLocaleString(locale, {
+      minimumFractionDigits: digits,
+      maximumFractionDigits: digits,
+    });
+    return showSymbol ? `₹${zero}` : zero;
+  }
 
-  return formattedAmount;
-};
+  return value.toLocaleString(locale, {
+    style: showSymbol ? 'currency' : 'decimal',
+    currency: currency.toUpperCase(),
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits,
+  });
+}
 
 
 
