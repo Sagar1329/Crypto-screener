@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quick Start 
+Follow these steps to set up the project locally on your machine.
 
-## Getting Started
+## Prerequisites
 
-First, run the development server:
+### Make sure you have the following installed on your machine:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Git
+2. Node.js
+3. npm (Node Package Manager)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Cloning the Repository
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`git clone https://github.com/adrianhajdin/coinpulse.git`
+`cd coinpulse`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation
 
-## Learn More
+Install the project dependencies using npm:
 
-To learn more about Next.js, take a look at the following resources:
+`npm install`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Set Up Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`Create a new file named .env in the root of your project and add the following content:`
 
-## Deploy on Vercel
+`COINGECKO_BASE_URL=https://pro-api.coingecko.com/api/v3`
+`COINGECKO_API_KEY=`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`NEXT_PUBLIC_COINGECKO_WEBSOCKET_URL=`
+`NEXT_PUBLIC_COINGECKO_API_KEY=`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Replace the placeholder values with your real credentials. You can get these by signing up at: CoinGecko API.
+
+## Running the Project
+
+`npm run dev`
+Open http://localhost:3000 in your browser to view the project.
+
+I have used demo api key for this project
+I have hosted the project on Vercel - [Live](https://crypto-screener-zeta.vercel.app/)
