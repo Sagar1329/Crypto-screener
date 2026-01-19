@@ -11,7 +11,7 @@ Follow these steps to set up the project locally on your machine.
 
 ## Cloning the Repository
 
-`git clone https://github.com/adrianhajdin/coinpulse.git`
+`git clone https://github.com/Sagar1329/Crypto-screener.git`
 `cd coinpulse`
 
 ## Installation
