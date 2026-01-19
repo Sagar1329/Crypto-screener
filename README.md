@@ -12,7 +12,8 @@ Follow these steps to set up the project locally on your machine.
 ## Cloning the Repository
 
 `git clone https://github.com/Sagar1329/Crypto-screener.git`
-`cd coinpulse`
+ 
+ `cd coinpulse`
 
 ## Installation
 
@@ -22,12 +23,14 @@ Install the project dependencies using npm:
 
 ## Set Up Environment Variables
 
-`Create a new file named .env in the root of your project and add the following content:`
+Create a new file named .env in the root of your project and add the following content:
 
 `COINGECKO_BASE_URL=https://pro-api.coingecko.com/api/v3`
+
 `COINGECKO_API_KEY=`
 
 `NEXT_PUBLIC_COINGECKO_WEBSOCKET_URL=`
+
 `NEXT_PUBLIC_COINGECKO_API_KEY=`
 
 Replace the placeholder values with your real credentials. You can get these by signing up at: CoinGecko API.
